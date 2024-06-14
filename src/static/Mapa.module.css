@@ -1,0 +1,136 @@
+/* styles.css */
+/* Estilos comuns que já existem */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-variation-settings: "slnt" 0;
+}
+
+body {
+    background: #0AB58A;
+}
+
+.card {
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    flex-direction: column;
+    width: 600px;
+    max-height: 700px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    margin: 100px auto;
+    padding: 30px;
+    text-align: left;
+}
+
+.card form {
+    width: 100%;
+}
+
+.card label {
+    text-align: left;
+    width: 100%;
+    margin-bottom: 2px;
+    color: black;
+    font-weight: 600;
+}
+
+.card input {
+    background-color: #F1F1F1;
+    width: 400px;
+    border: none;
+    display: block;
+    outline: none;
+    color: #000;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.card h1 {
+    text-align: center;
+    margin-bottom: 10px;
+    font-weight: 900;
+    color: #000;
+}
+
+.card span {
+    text-align: center;
+    margin-bottom: 2px;
+    color: #0AB58A;
+}
+
+.card h2 {
+    align-self: flex-start;
+    padding-left: 0;
+    text-align: left;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #0AB58A;
+}
+
+.card button {
+    background-color: #0AB58A;
+    border: none;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    outline: none;
+}
+
+.buttonLink {
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.buttonLink a {
+    text-decoration: none;
+    font-weight: 700;
+    color: #0AB58A;
+}
+
+.buttonLink a:hover {
+    text-decoration: underline;
+}
+
+.mensagem {
+    color: red;
+    font-size: 0.9em;
+}
+
+/* Estilos específicos do mapa */
+.divAll {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 70vw;
+    height: 65vh;
+    background-color: #FFFFFF;
+    border-radius: 2vh;
+    gap: 4vh;
+    padding: 4vh;
+    margin: 50px auto; /* Ajuste de margem */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23); /* Aplicar sombra */
+}
+
+.titleMap {
+    font-size: 5vh;
+    color: #0AB58A;
+    font-weight: bold;
+}
+
+.map {
+    width: 80%;
+    height: 50vh;
+    border: 0;
+}
