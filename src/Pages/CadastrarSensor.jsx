@@ -36,7 +36,7 @@ export function CadastrarSensor() {
   async function obterDadosFormulario(data) {
     try {
       const response = await axios.post(
-        "https://gabrielfaiska.pythonanywhere.com/api/sensores/",
+        "https://backlindomar.pythonanywhere.com/api/sensores/",
         data,
         {
           headers: {

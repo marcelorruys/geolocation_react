@@ -39,7 +39,7 @@ export function AlterarSensor() {
     try {
       const token = localStorage.getItem("access_token");
       const response = await axios.get(
-        `https://gabrielfaiska.pythonanywhere.com/api/sensores/${id}/`,
+        `https://backlindomar.pythonanywhere.com/api/sensores/${id}/`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -66,7 +66,7 @@ export function AlterarSensor() {
       const token = localStorage.getItem("access_token");
       //chamo a api passando "data"
       await axios.put(
-        `https://gabrielfaiska.pythonanywhere.com/api/sensores/${id}/`,
+        `https://backlindomar.pythonanywhere.com/api/sensores/${id}/`,
         data,
         {
           headers: {
@@ -84,6 +84,7 @@ export function AlterarSensor() {
   return (
     <>
       <Header />
+      <div className={estilos.divGeral}>
       <form className={estilos.formulario} onSubmit={handleSubmit(onSubmit)}>
         <h1>Editar</h1>
         <div className={estilos.containerEditar}>
@@ -154,7 +155,7 @@ export function AlterarSensor() {
           </div>
 
           <div className={estilos.opcoesEditar}>
-            <label>Está em funcionamento</label>
+            <label>Ativo</label>
             <input {...register("status_operacional")} type="checkbox" />
           </div>
         </div>
@@ -174,6 +175,7 @@ export function AlterarSensor() {
           Salvar Alterações
         </button>
       </form>
+      </div>
     </>
   );
 }

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Header } from "../components/Header";
 import { Link } from "react-router-dom";
-import "../static/Informacoes.module.css";
+import estilos from "../static/Informacoes.module.css";
 
 
 export function Informacoes() {
@@ -104,60 +104,14 @@ export function Informacoes() {
   return (
     <>
       <Header />
-      <div className="InformacoesDiv">
-        <div className="Informacoes">
-          <h1 className="tituloInformacoes">Informações gerais</h1>
-
-          <div className="allComponents">
-            <div className="divInformacoes">
-              <h3 className="tituloListas">Temperatura das salas</h3>
-              <div className="listas">
-                <ul>
-                  {temperaturas
-                    .reduce((uniqueTemperaturas, temperatura) => {
-                      if (
-                        !uniqueTemperaturas.some(
-                          (temp) => temp.sensor === temperatura.sensor
-                        )
-                      ) {
-                        uniqueTemperaturas.push(temperatura);
-                      }
-                      return uniqueTemperaturas;
-                    }, [])
-                    .map((temperatura) => (
-                      <li key={temperatura.sensor} className="itensUl">
-                        {`Sensor ID ${temperatura.sensor}: ${temperatura.valor}°`}
-                      </li>
-                    ))}
-                </ul>
-              </div>
-            </div>
-
-            <div className="divInformacoes">
-              <h3 className="tituloListas">Localização atual</h3>
-              <ul>
-                <li className="itensUl">
-                  Latitude: <span>-845656564115</span>
-                </li>
-                <li className="itensUl">
-                  Longitude: <span>-158456565641</span>
-                </li>
-              </ul>
-              <a href="/mapa" className="linkMapa">
-                Veja o mapa!
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div className="allInformacoes">
-        <h1 className="tituloInformacoes">Sensores Cadastrados</h1>
-        <Link className="botaoCadastrar" to={`cadastrar_sensor`}>
+      <hr />
+      <div className={estilos.allInformacoes}>
+        <h1 className={estilos.tituloInformacoes}>Sensores Cadastrados</h1>
+        <Link className={estilos.botaoCadastrar} to={`cadastrar_sensor`}>
           Cadastrar Novo Sensor
         </Link>
-        <form onSubmit={handleSubmit} className="formulario">
-          <div className="filtros">
+        <form onSubmit={handleSubmit} className={estilos.formulario}>
+          <div className={estilos.filtros}>
             <label>Responsável</label>
             <input
               type="text"
@@ -167,8 +121,8 @@ export function Informacoes() {
             />
           </div>
 
-          <div className="filtroCheck">
-            <label>Está em funcionamento</label>
+          <div className={estilos.filtroCheck}>
+            <label>Ativo</label>
             <input
               type="checkbox"
               name="status_operacional"
@@ -177,7 +131,7 @@ export function Informacoes() {
             />
           </div>
 
-          <div className="filtros">
+          <div className={estilos.filtros}>
             <label>Tipo</label>
             <input
               type="text"
@@ -187,7 +141,7 @@ export function Informacoes() {
             />
           </div>
 
-          <div className="filtros">
+          <div className={estilos.filtros}>
             <label>Localização</label>
             <input
               type="text"
@@ -197,13 +151,13 @@ export function Informacoes() {
             />
           </div>
 
-          <button className="botaoFiltrar" type="submit">
+          <button className={estilos.botaoFiltrar} type="submit">
             Filtrar
           </button>
         </form>
 
-        <div className="Informacoes2">
-          <table className="tabelaInformacoes">
+        <div className={estilos.Informacoes2}>
+          <table className={estilos.tabelaInformacoes}>
             <thead>
               <tr>
                 <th>ID</th>
@@ -224,9 +178,9 @@ export function Informacoes() {
                   <td>{sensor.latitude}</td>
                   <td>{sensor.longitude}</td>
                   <td>{sensor.responsavel}</td>
-                  <td>
-                    <Link className="button" to={`alterar_sensor/${sensor.id}`}>Editar</Link>
-                    <button className="button" onClick={() => deletarSensor(sensor.id)}>Deletar</button>
+                  <td className={estilos.tede}>
+                    <Link className={estilos.editarButton} to={`alterar_sensor/${sensor.id}`}>Editar</Link>
+                    <button className={estilos.deletarButton} onClick={() => deletarSensor(sensor.id)}>Deletar</button>
                   </td>
                 </tr>
               ))}

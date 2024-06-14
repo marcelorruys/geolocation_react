@@ -9,6 +9,7 @@
     font-family: "Inter", sans-serif;
     font-optical-sizing: auto;
     font-variation-settings: "slnt" 0;
+    text-decoration: none;
 }
 
 body {
@@ -122,8 +123,7 @@ body {
 }
 
 .formulario input {
-    border: none;
-    border-bottom: 0.3vh solid black;
+    border: solid 1px;
     padding: 0.6vh;
     width: 11vw;
     font-size: 2vh;
@@ -165,4 +165,55 @@ body {
 .botaoFiltrar:hover, .botaoCadastrar:hover {
     color: #ffffff;
     background-color: #0AB58A;
+}
+/* Estilos para os botões Editar e Deletar */
+.editarButton,
+.deletarButton {
+    width: 6vw; /* Ajuste conforme necessário */
+    height: 4vh;
+    border-radius: 1vh;
+    font-size: 1.8vh;
+    color: #ffffff;
+    background-color: #0AB58A;
+    border: none;
+    font-family: "Inter", sans-serif;
+    cursor: pointer;
+    transition: .5s;
+    margin-right: 0.5vw; /* Espaçamento entre os botões */
+}
+
+.editarButton:hover,
+.deletarButton:hover {
+    color: #ffffff;
+    background-color: #0AB58A;
+    
+}
+
+/* Estilo para o botão de cadastro */
+.botaoCadastrar {
+    width: 14vw; /* Ajuste conforme necessário */
+    height: 4vh;
+    border-radius: 1vh;
+    font-size: 1.8vh;
+    color: #ffffff;
+    background-color: #0AB58A;
+    border: none;
+    font-family: "Inter", sans-serif;
+    cursor: pointer;
+    transition: .5s;
+}
+
+.botaoCadastrar:hover {
+    color: #ffffff;
+    background-color: #0AB58A;
+}
+.tede{
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}
+.editarButton, .botaoCadastrar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
